@@ -27,7 +27,9 @@ app.use(expressSession({
 app.use(async (req, res, next) => {
     if(req.session.userId) {
         const user = await User.findById(req.session.userId);
+        const admin = Boolean;
         req.user = user;
+        req.user.isAdmin = admin;
         res.locals.user = user.username;
     } else {
         res.locals.user = null;
