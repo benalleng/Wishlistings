@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title><%= wish.name %></title>
+	</head>
+	<body>
+		<%- include('../partials/nav.ejs') %>
+        <h2><%= wish.name %></h2>
+		<p>
+            <label> Owner: <%= wish.owner %>
+            </label> 
+            <br>
+            <label> <img src="<%= wish.img %>" alt="<%= wish.name %>" width="300" height="300">
+            </label>
+            <br>
+            <label> Purchased: <%= wish.isPurchased %>
+            </label>
+        <p><br>
+            <% if(user == wish.admin || user == wish.owner) { %>
+		<form action="/wishlist/<%= wish._id %>?_method=DELETE" method="POST">
+			<input type="submit" value="Delete this Wish">
+		</form>
+        </nav>
+			<a href="/wishlist/<%= wish._id %>/edit">Edit This Wish</a>
+			<% } %>
+            <br>
+			<a href="/wishlist">Back to Wishlist</a>
+            <br>
+            <a href="/wishlist/new">Add a New Wish</a>
+		</nav>
+	</body>
+</html>

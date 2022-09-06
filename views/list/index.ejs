@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Wishlist</title>
+	</head>
+	<body>
+		<%- include('../partials/nav.ejs') %>
+		<h2>Wishlistings</h2>
+        <ul>
+			<% wishes.forEach(wish => { %>
+			<li><a href="/wishlist/<%= wish._id %>"> <%= wish.name %> </a></li>
+			<% }); %>
+		</ul>
+        <nav>
+            <a href="/wishlist/new">Add to my List</a>
+        </nav>
+	</body>
+</html>
