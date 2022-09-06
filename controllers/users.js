@@ -39,7 +39,7 @@ router.post('/login', (req, res) => {
         
     
     
-})
+});
 
 // GET Logout
 router.get('/logout', (req, res) => {

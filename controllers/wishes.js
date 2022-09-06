@@ -34,7 +34,7 @@ router.delete('/:id', (req, res) => {
 
 // UPDATE
 router.put('/:id', (req, res) => {
-    req.body.completed = !! req.body.completed;
+    req.body.isPurchased = !! req.body.isPurchased;
 
     Wish.findByIdAndUpdate(req.params.id, req.body, (err, wishBeforeUpdate) => {
         console.log('Errors: ' + err);
@@ -44,7 +44,7 @@ router.put('/:id', (req, res) => {
 
 // CREATE
 router.post('/', (req, res) => {
-    req.body.completed = !! req.body.completed;
+    req.body.isPurchased = !! req.body.isPurchased;
     
     Wish.create(req.body, (err, createdWish) => {
         console.log('Errors: ' + err);
