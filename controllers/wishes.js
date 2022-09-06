@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Book = require('../models/wish');
+const Wish = require('../models/wish');
 
 // INDEX
 router.get('/seed', (req, res) => {
@@ -14,8 +14,8 @@ router.get('/seed', (req, res) => {
 });
 
 router.get('/', (req, res) => {
-    Wish.find({}, (err, books) => {
-        res.render('list/index.ejs', {books: books});
+    Wish.find({}, (err, wishes) => {
+        res.render('list/index.ejs', {wishes: wishes});
     });
 });
 
@@ -54,15 +54,15 @@ router.post('/', (req, res) => {
 
 // EDIT
 router.get('/:id/edit', (req, res) => {
-    Book.findById(req.params.id, (err, foundBook) => {
-        res.render('list/edit.ejs', { book: foundBook });
+    Wish.findById(req.params.id, (err, foundWish) => {
+        res.render('list/edit.ejs', { wish: foundWish });
     });
 });
 
 // SHOW
 router.get('/:id', (req, res) => {
-	Book.findById(req.params.id, (err, foundBook) => {
-		res.render('list/show.ejs', { book: foundBook });
+	Wish.findById(req.params.id, (err, foundWish) => {
+		res.render('list/show.ejs', { wish: foundWish });
 	});
 });
 
