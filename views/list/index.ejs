@@ -9,9 +9,12 @@
 	<body>
 		<%- include('../partials/nav.ejs') %>
 		<h2>Wishlistings</h2>
-        <ul>
+        <ul style="list-style-type: none;">
 			<% wishes.forEach(wish => { %>
-			<li><a href="/wishlist/<%= wish._id %>"> <%= wish.name %> </a></li>
+			<li class="indexList"><a href="/wishlist/<%= wish._id %>"> <img src="<%= wish.img %>" alt="<%= wish.name %>" width="300" height="300"></a>
+            <br> <%= wish.name %> <br>
+            <%= wish.owner %>
+            </li>
 			<% }); %>
 		</ul>
         <nav>
