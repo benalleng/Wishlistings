@@ -35,10 +35,7 @@ router.post('/login', (req, res) => {
         });
         req.session.userId = foundUser._id;
         res.redirect('/wishlist');
-    });
-        
-    
-    
+    });  
 });
 
 // GET Logout
