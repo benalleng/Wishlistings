@@ -1,5 +1,10 @@
 # Wishlistings
 
+## Live app link
+
+[Wishlistings](https://wishlistings.netlify.app/)
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b8daa29d-2b58-49f5-83b1-51f9d1725c96/deploy-status)](https://app.netlify.com/sites/wishlistings/deploys)
 ## TODO
 - README
 
