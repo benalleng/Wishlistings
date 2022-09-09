@@ -4,34 +4,24 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Wishlist</title>
+		<title>WishListings</title>
 	</head>
 	<body>
         <%- include('../partials/nav.ejs') %>
-		<h2>Change Your Wish</h2>
+		<h2>Checkout</h2>
 		<form action="/wishlist/<%= wish._id %>?_method=PUT" method="POST">
-			<label> Name: <input type="text" name="name" value="<%= wish.name %>">
-            </label><br>
-            <label> Image: <img src="<%= wish.img %>" alt="<%= wish.name %>" width="300" height="300"><br><input type="url" name="img" value="<%= wish.img %>">
-            </label><br>
-            <label> Description: <input type="text" name="description" value="<%= wish.description %>">
-            </label><br>
-            <label> Tags: <input type="text" name="tags" value="<%= wish.tags %>">
-            </label><br>
-            <label> Price: <input type="number" name="price" value="<%= wish.price %>">
-            </label><br>
-            <label> Owner: <input type="text" name="owner" value="<%= wish.owner %>">
-            </label><br>
+            
             <label> Purchased: <input type="checkbox" name="isPurchased" 
                                     <% if(wish.isPurchased) { %> 
                                         checked
                                     <% } %>
                                 >
             </label><br>
-			<input type="submit" value="Update Book">
+			<input type="submit" value="Update Wish">
 		</form><br>
         <nav>
             <a href="/wishlist">Cancel</a>
         </nav>
+        <%- include('../partials/footer.ejs') %>
     </body>
 </html>

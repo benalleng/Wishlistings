@@ -19,17 +19,19 @@
             <label> Purchased: <%= wish.isPurchased %>
             </label>
         <p><br>
+		<nav>
             <% if(user == wish.admin || user == wish.owner) { %>
 		<form action="/wishlist/<%= wish._id %>?_method=DELETE" method="POST">
 			<input type="submit" value="Delete this Wish">
 		</form>
-        </nav>
 			<a href="/wishlist/<%= wish._id %>/edit">Edit This Wish</a>
 			<% } %>
-            <br>
-			<a href="/wishlist">Back to Wishlist</a>
-            <br>
-            <a href="/wishlist/new">Add a New Wish</a>
 		</nav>
+		<nav>
+			<a href="/wishlist">Back to Wishlist</a>
+			<br>
+			<a href="/wishlist/new">Add a New Wish</a>
+		</nav>
+		<%- include('../partials/footer.ejs') %>
 	</body>
 </html>
