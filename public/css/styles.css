@@ -34,7 +34,7 @@ footer {
     to {width: 1020px;}
   }
 
-.indexList {
+.indexWishItem {
     position: relative;
     top: 0;
     left: 0;
@@ -53,7 +53,3 @@ footer {
     left: 0px;
     z-index: 2;
   }
-
-.cartItem {
-    visibility: hidden;
-}

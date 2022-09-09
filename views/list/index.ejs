@@ -14,17 +14,29 @@
         </nav>
         <ul class="indexWishList" style="list-style-type: none;">
 			<% wishes.forEach(wish => { %>
-			<li class="indexList" id="<%= wish.id %>">
+			<li class="indexWishItem" id="<%= wish.id %>">
 				<a href="/wishlist/<%= wish._id %>"><% if(wish.isPurchased == true){ %><img class="wishBow" src="/assets/Red_Bow_Crop.png" width="300" height="225"/><% } %><img class="wishIndex"<% if(wish.isPurchased == true){ %>style="filter: grayscale(100%);"<% } %>src="<%= wish.img %>" alt="<%= wish.name %>" width="300" height="300"/>
 				</a>
             <br> <%= wish.name %> <br>
-            <%= wish.owner %> 
-			<% if(wish.isPurchased == false) { %> 
-				<button class="cartButton cartAdd">Add to Cart</button>
-				<form style="display: none; visibility: visible;" <%if(wish.isPurchased == true) { %>
-                  <% } %> 
+            <%= wish.owner %>
+			<br>
+			<% if(wish.inCart == false && wish.isPurchased == false) { %>
+				<form style=" visibility: visible;"
+            action="/wishlist/<%= wish._id %>/addtocart?_method=PUT" method="POST">
+					<input hidden type="checkbox" name="inCart" checked>
+                	<input type="submit" id="<%=wish._id %>" class="cartButton" value="Add to Cart">
+				</form>
+			<% } else if(wish.inCart == true && wish.isPurchased == false) { %>
+				<form style=" visibility: visible;"
+            action="/wishlist/<%= wish._id %>/addtocart?_method=PUT" method="POST">
+					<input hidden type="checkbox" name="inCart">
+                	<input type="submit" id="<%=wish._id %>" class="cartUnButton" value="Remove from Cart">
+				</form>
+			<% } %>
+			<% if(wish.isPurchased == false && wish.inCart == true) { %> 
+				<form style="visibility: visible;" 
             action="/wishlist/<%= wish._id %>/buy?_method=PUT" method="POST">
-			    	<input hidden type="checkbox" name="isPurchased" checked>
+			<input hidden type="checkbox" name="isPurchased" checked>
                 	<input type="submit" id="<%=wish._id %>" class="Buy" value="Buy">
 				</form>
 			<% } %>
@@ -34,11 +46,4 @@
         <ul class="cart" style="list-style-type: none;"></ul>
 		<%- include('../partials/footer.ejs') %>
 	</body>
-	<script>
-		$('.cartButton').click(function (Wish) {
-			$(this).parent().appendTo('.cart');
-			$(this).toggle();
-			$(this.nextElementSibling).toggle();
-		});
-	</script>
 </html>

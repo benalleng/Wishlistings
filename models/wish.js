@@ -11,6 +11,7 @@ const wishSchema = new Schema({
     price: {type: Number},
     admin: {type:String, default:'admin67890'},
     isPurchased: Boolean,
+    inCart: Boolean,
 }, { timestamps: true });
 
 module.exports = mongoose.model('Wish', wishSchema);

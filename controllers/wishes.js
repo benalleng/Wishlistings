@@ -42,11 +42,20 @@ router.put('/:id', (req, res) => {
     });
 });
 
+router.put('/:id/addtocart', (req, res) => {
+    req.body.inCart = !! req.body.inCart;
+
+    Wish.findByIdAndUpdate(req.params.id, req.body, (err, wishBeforeCart) => {
+        console.log(req.body.inCart);
+        res.redirect('/wishlist');
+    });
+});
+
 router.put('/:id/buy', (req, res) => {
     req.body.isPurchased = !! req.body.isPurchased;
-    
-    Wish.findByIdAndUpdate(req.params.id, req.body, (err, wishBeforeBuy) => {
-        console.log('Errors: ' + err);
+
+    Wish.findByIdAndUpdate(req.params.id, req.body, (err, wishBeforeCart) => {
+        console.log(req.body.isPurchased);
         res.redirect('/wishlist');
     });
 });

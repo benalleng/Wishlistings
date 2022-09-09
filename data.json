@@ -7,6 +7,7 @@
         "price": 30,
         "tags": ["Fluffy!", "Cuddly"],
         "isPurchased": false,
+        "inCart": false,
         "admin": "admin67890"
     },
     {
@@ -17,6 +18,7 @@
         "price": 500,
         "tags": ["Smooth", "Warm"],
         "isPurchased": true,
+        "inCart": true,
         "admin": "admin67890"
     },
     {
@@ -27,6 +29,7 @@
         "price": 1,
         "tags": ["Perfect", "Squeezy"],
         "isPurchased": false,
+        "inCart": false,
         "admin": "admin67890"
     }
 ]
