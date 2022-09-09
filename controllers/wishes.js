@@ -13,11 +13,11 @@ router.get('/seed', (req, res) => {
     });
 });
 
-router.get('/', (req, res) => {
-    Wish.find({}, (err, wishes) => {
-        res.render('list/index.ejs', {wishes: wishes});
-    });
-});
+// router.get('/', (req, res) => {
+//     Wish.find({}, (err, wishes) => {
+//         res.render('list/index.ejs', {wishes: wishes});
+//     });
+// });
 
 // NEW
 router.get('/new', (req, res) => {
@@ -38,9 +38,19 @@ router.put('/:id', (req, res) => {
 
     Wish.findByIdAndUpdate(req.params.id, req.body, (err, wishBeforeUpdate) => {
         console.log('Errors: ' + err);
-        res.redirect('/wishlist/' + req.params.id);
+        res.redirect('/wishlist');
     });
 });
+
+router.put('/:id/buy', (req, res) => {
+    req.body.isPurchased = !! req.body.isPurchased;
+    
+    Wish.findByIdAndUpdate(req.params.id, req.body, (err, wishBeforeBuy) => {
+        console.log('Errors: ' + err);
+        res.redirect('/wishlist');
+    });
+});
+
 
 // CREATE
 router.post('/', (req, res) => {
