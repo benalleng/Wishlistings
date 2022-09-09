@@ -11,6 +11,9 @@ const DATABASE_URI = process.env.DATABASE_URI;
 const db = mongoose.connection;
 const expressSession = require('express-session');
 app.use(express.static('public'));
+const Wish = require('./models/wish');
+const $ = require('jquery');
+
 
 mongoose.connect(DATABASE_URI);
 db.on('connected', () => console.log('Connected to MongoDB'));
@@ -47,8 +50,15 @@ app.get('/', (req, res) => {
     res.render('index.ejs');
 });
 
+app.get('/wishlist', (req, res) => {
+    Wish.find({}, (err, wishes) => {
+        res.render('list/index.ejs', {wishes: wishes});
+    });
+});
+
 app.use(usersRouter);
-app.use('/wishlist', isAuthenticated, wishesRouter);
+app.use('/wishlist/', isAuthenticated, wishesRouter);
+
 
 app.listen(PORT, () => {
     console.log(`Express is listening on port: ${PORT}`);
