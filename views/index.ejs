@@ -5,17 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="/app/script.js"></script>
-    <title>Welcome To Wishlistings</title>
+    <title>WishListings</title>
 </head>
 <body>
     <%- include('./partials/nav.ejs') %>
     <main>
-        <h2>Welcome To the Wishlistings!</h2>
-        <img class="Bow" src="/assets/Red_Bow_Crop.png">
+        <h2>Welcome to WishListings!</h2>
+        <p>Click the Bow to enter or signup for an account!</p>
+        <a class="Bow" href="/wishlist"><img class="Bow" src="/assets/Red_Bow_Crop.png"></a> 
     </main>
-    <footer>
-        <p>Copyright &copy; All Rights Reserved Wishlisting <%= new Date().getFullYear() %></p>
-        <p>Made with HooAh by Ben A</p>
-    </footer>
+    <%- include('./partials/footer.ejs') %>
 </body>
 </html>
