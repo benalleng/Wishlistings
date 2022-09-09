@@ -6,14 +6,15 @@ const User = require('./models/user')
 require('dotenv').config();
 const wishesRouter = require('./controllers/wishes');
 const usersRouter = require('./controllers/users');
-const PORT = process.env.PORT;
-const DATABASE_URI = process.env.DATABASE_URI;
 const db = mongoose.connection;
 const expressSession = require('express-session');
 app.use(express.static('public'));
 const Wish = require('./models/wish');
 
-mongoose.connect('DATABASE_URI');
+const PORT = process.env.PORT;
+const DATABASE_URI = process.env.DATABASE_URI;
+
+mongoose.connect(DATABASE_URI);
 db.on('connected', () => console.log('Connected to MongoDB'));
 db.on('error', (err) => console.log('MongoDB Error: ' + err.message));
 
