@@ -14,7 +14,7 @@ app.use(express.static('public'));
 const Wish = require('./models/wish');
 const $ = require('jquery');
 
-
+mongoose.connect(process.env.MONGODB_URI);
 mongoose.connect(DATABASE_URI);
 db.on('connected', () => console.log('Connected to MongoDB'));
 db.on('error', (err) => console.log('MongoDB Error: ' + err.message));
@@ -60,6 +60,6 @@ app.use(usersRouter);
 app.use('/wishlist/', isAuthenticated, wishesRouter);
 
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT, () => {
     console.log(`Express is listening on port: ${PORT}`);
 });
