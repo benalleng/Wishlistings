@@ -1,3 +1,59 @@
 * {
     box-sizing: border-box;
+    border-style: none;
+}
+
+body {
+    /* display: flex; */
+    margin: 0px;
+    /* justify-content: center; */
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+}
+
+.Bow {
+    display: flex;
+    width: 1000px;
+    height: 600px;
+    align-self: center;
+}
+
+.Bow:hover {
+    font-size: 12;
+    animation-name: grow;
+    animation-duration: 300ms;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+  }
+  
+@keyframes grow {
+    from {width: 1000px;}
+    to {width: 1020px;}
+  }
+
+.indexList {
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+  
+.wishIndex {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+  }
+  
+.wishBow {
+    position: absolute;
+    top: 35px;
+    left: 0px;
+    z-index: 2;
+  }
+
+.cartItem {
+    visibility: hidden;
 }
