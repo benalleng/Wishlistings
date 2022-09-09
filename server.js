@@ -13,7 +13,7 @@ const expressSession = require('express-session');
 app.use(express.static('public'));
 const Wish = require('./models/wish');
 
-mongoose.connect(DATABASE_URI);
+mongoose.connect('DATABASE_URI');
 db.on('connected', () => console.log('Connected to MongoDB'));
 db.on('error', (err) => console.log('MongoDB Error: ' + err.message));
 
