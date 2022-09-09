@@ -12,7 +12,7 @@ app.use(express.static('public'));
 const Wish = require('./models/wish');
 
 const PORT = process.env.PORT;
-const DATABASE_URI = process.env.DATABASE_URI;
+const DATABASE_URI = "mongodb+srv://admin_cluster:abc1234@cluster0.z2qlbgw.mongodb.net/wishlist?retryWrites=true&w=majority"
 
 mongoose.connect(DATABASE_URI);
 db.on('connected', () => console.log('Connected to MongoDB'));
