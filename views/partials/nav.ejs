@@ -4,15 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wishlist</title>
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"
+></script>
+<script defer src="/app/script.js"></script>
+    <link rel="icon" type="icon" sizes="32x32" href="/assets/Red_Bow_Crop.ico">
+    <link rel="stylesheet" type="text/css" href="/css/styles.css" />
+    <title>WishListings</title>
 </head>
 <body>
     <header>
         <h1>
-            <a href="/">Wishlist</a>
+            <a href="/wishlist">Wishlistings</a>
         </h1>
         <nav>
-            <ul>
+            <ul style="list-style: none;">
                 <% if(user) { %>
                     <li>
                         Welcome, <%= user %>!
