@@ -10,11 +10,11 @@
 		<%- include('../partials/nav.ejs') %>
         <h2><%= wish.name %></h2>
 		<p>
+			<label> <img src="<%= wish.img %>" alt="<%= wish.name %>" width="300" height="300">
+			</label>
+			<br>
             <label> Owner: <%= wish.owner %>
             </label> 
-            <br>
-            <label> <img src="<%= wish.img %>" alt="<%= wish.name %>" width="300" height="300">
-            </label>
             <br>
             <label> Purchased: <%= wish.isPurchased %>
             </label>

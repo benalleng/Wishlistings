@@ -5,7 +5,6 @@
         "img": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn11.bigcommerce.com%2Fs-xr05ynhyn0%2Fimages%2Fstencil%2F2560w%2Fproducts%2F3663%2F12204%2Fjftoy00071_white_bkg_1___94169.1621557538.jpg%3Fc%3D2&f=1&nofb=1",
         "owner": "Ben",
         "price": 30,
-        "tags": ["Fluffy!", "Cuddly"],
         "isPurchased": false,
         "inCart": false,
         "admin": "admin67890"
@@ -16,7 +15,6 @@
         "img": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi5.walmartimages.com%2Fasr%2F168e0e29-fea9-4359-a36c-716ea0b8e5e5_1.b3fdb1f911d222ca1d9df6542edb6b10.jpeg&f=1&nofb=1",
         "owner": "Ben",
         "price": 500,
-        "tags": ["Smooth", "Warm"],
         "isPurchased": true,
         "inCart": true,
         "admin": "admin67890"
@@ -27,7 +25,6 @@
         "img": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.7W67scb7zmjLco2KWW2BYQHaEK%26pid%3DApi&f=1",
         "owner": "John",
         "price": 1,
-        "tags": ["Perfect", "Squeezy"],
         "isPurchased": false,
         "inCart": false,
         "admin": "admin67890"
