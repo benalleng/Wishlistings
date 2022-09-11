@@ -9,34 +9,36 @@
 	</head>
 	<body>
 		<%- include('../partials/nav.ejs') %>
-        <h2><%= wish.name %></h2>
-		<p>
-            <label> Owner: <%= wish.owner %>
-            </label> 
-            <br>
-            <label> <img src="<%= wish.img %>" alt="<%= wish.name %>" width="300" height="300">
-            </label>
-            <br>
-            <label> Purchased: <%= wish.isPurchased %>
-            </label>
-        <p><br>
-		<nav>
-            <% if(user == wish.admin || user == wish.owner) { %>
-		<form action="/wishlist/<%= wish._id %>?_method=DELETE" method="POST">
-			<input type="submit" value="Delete this Wish">
-		</form>
-			<% if(wish.isPurchased == false) { %>
-				<a href="/wishlist/<%= wish._id %>/edit">Edit This Wish</a>
-			<% } %>
-			<% } %>
-		</nav>
-		<nav>
-			<a href="/wishlist">Back to Wishlist</a>
-			<br>
-			<a href="/wishlist/new">Add a New Wish</a>
-		</nav>
-	</body>
-		<footer class="indexFooter">
-			<%- include('../partials/footer.ejs') %>
-		</footer>
+        <h2 class="title"><%= wish.name %></h2>
+		<main class="newItem">
+
+				<label> Owner: <%= wish.owner %>
+				</label> 
+				<br>
+				<label> <img src="<%= wish.img %>" alt="<%= wish.name %>" width="300" height="300">
+				</label>
+				<br>
+				<label> Purchased: <%= wish.isPurchased %>
+				</label>
+				<br>
+					<nav>
+						<% if(user == wish.admin || user == wish.owner) { %>
+							<form action="/wishlist/<%= wish._id %>?_method=DELETE" method="POST">
+								<input class="cartUnButton" type="submit" value="Delete this Wish">
+							</form>
+							<% if(wish.isPurchased == false) { %>
+								<a href="/wishlist/<%= wish._id %>/edit">Edit This Wish</a>
+								<% } %>
+								<% } %>
+							</nav>
+							<nav>
+								<a href="/wishlist">Back to Wishlist</a>
+								<br>
+								<a href="/wishlist/new">Add a New Wish</a>
+							</nav>
+						</main>
+						</body>
+						<footer class="indexFooter">
+							<%- include('../partials/footer.ejs') %>
+						</footer>
 </html>

@@ -9,20 +9,34 @@
 	</head>
 	<body>
         <%- include('../partials/nav.ejs') %>
-		<h2>Checkout</h2>
-		<form action="/wishlist/<%= wish._id %>?_method=PUT" method="POST">
-            
-            <label> Purchased: <input type="checkbox" name="isPurchased" 
-                                    <% if(wish.isPurchased) { %> 
-                                        checked
-                                    <% } %>
-                                >
-            </label><br>
-			<input type="submit" value="Update Wish">
-		</form><br>
-        <nav>
-            <a href="/wishlist">Cancel</a>
-        </nav>
+		<h2 class="title">Checkout</h2>
+        <main class="newItem">
+
+            <form action="/wishlist/<%= wish._id %>?_method=PUT" method="POST">
+                <label> Name: <br> <input type="text" name="name" value="<%= wish.name%>">
+                </label><br>
+                <label> Image: <br> <input type="url" name="img" value="<%= wish.img %>">
+                </label><br>
+                <label> Description: <br> <input type="text" name="description" value="<%= wish.description %>">
+                </label><br>
+                <label> Price: <br> <input type="number" name="price" value="<%= wish.price %>">
+                </label><br>
+                <% if(user == wish.admin) { %>
+                    <label> Owner: <br> <input type="text" name="owner" value="<%= user %>">
+                    </label> <br>
+                    <% } %>
+                <label> Purchased: <input type="checkbox" name="isPurchased" 
+                    <% if(wish.isPurchased) { %> 
+                        checked
+                        <% } %>
+                        >
+                    </label><br>
+                    <input class="cartButton" type="submit" value="Update Wish">
+                </form><br>
+                <nav>
+                    <a href="/wishlist">Cancel</a>
+                </nav>
+            </main>
     </body>
         <nav class="indexFooter">
 			<%- include('../partials/footer.ejs') %>

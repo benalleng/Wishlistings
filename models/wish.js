@@ -6,7 +6,6 @@ const wishSchema = new Schema({
     name: {type: String, required: true},
     img: {type: String, required: true},
     description: {type: String, required: true},
-    tags: {type: Array, required: false},
     owner: {type: String, required: true},
     price: {type: Number},
     admin: {type:String, default:'admin67890'},

@@ -9,27 +9,29 @@
 	</head>
 	<body>
 		<%- include('../partials/nav.ejs') %>
-		<h2>New Book Page</h2>
-		<form action="/wishlist" method="POST">
-			<label> Name: <input type="text" name="name">
-            </label><br>
-            <label> Image: <input type="url" name="img">
-            </label><br>
-            <label> Description: <input type="text" name="description">
-            </label><br>
-            <label> Tags: <input type="text" name="tags">
-            </label><br>
-            <label> Price: <input type="number" name="price">
-            </label><br>
-            <label> Owner: <input type="text" name="owner" value="<%= user %>">
-            </label> 
-			<input type="submit" value="Add Wish">
-		</form><br>
-        <nav>
-            <a href="/wishlist">Cancel</a>
-        </nav>
-    </body>
+		<h2 class="title">New Book Page</h2>
+        <main class="newItem">
+
+            <form action="/wishlist" method="POST">
+                <label> Name: <br> <input type="text" name="name">
+                </label><br>
+                <label> Image: <br> <input type="url" name="img">
+                </label><br>
+                <label> Description: <br> <input type="text" name="description">
+                </label><br>
+                <label> Price: <br> <input type="number" name="price">
+                </label><br>
+                <label> Owner: <br> <input type="text" name="owner" value="<%= user %>">
+                </label> <br>
+                <input class="submit" type="submit" value="Add Wish">
+            </form><br>
+            <nav>
+                <a href="/wishlist">Cancel</a>
+            </nav>
+        </main>
+        </body>
         <footer class="indexFooter">
-			<%- include('../partials/footer.ejs') %>
+            <%- include('../partials/footer.ejs') %>
 		</footer>
-</html>
+        </html>
+        
