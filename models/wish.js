@@ -10,8 +10,8 @@ const wishSchema = new Schema({
     owner: {type: String, required: true},
     price: {type: Number},
     admin: {type:String, default:'admin67890'},
-    isPurchased: Boolean,
-    inCart: Boolean,
+    isPurchased: {type:Boolean, default: false},
+    inCart: {type:Boolean, default: false},
 }, { timestamps: true });
 
 module.exports = mongoose.model('Wish', wishSchema);
