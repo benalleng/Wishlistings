@@ -9,16 +9,22 @@
 	</head>
 	<body>
 		<%- include('../partials/nav.ejs') %>
-		<nav>
-            <a href="/wishlist/new">Add to my List</a>
+		<nav class="new">
+			<a class="newWish" href="/wishlist/new">Add a New Wish</a>
         </nav>
+		<main class="indexList"></main>
         <ul class="indexWishList" style="list-style-type: none;">
 			<% wishes.forEach(wish => { %>
 			<li class="indexWishItem" id="<%= wish.id %>">
 				<a href="/wishlist/<%= wish._id %>"><% if(wish.isPurchased == true){ %><img class="wishBow" src="/assets/Red_Bow_Crop.png" width="300" height="225"/><% } %><img class="wishIndex"<% if(wish.isPurchased == true){ %>style="filter: grayscale(100%);"<% } %>src="<%= wish.img %>" alt="<%= wish.name %>" width="300" height="300"/>
 				</a>
-            <br> <%= wish.name %> <br>
-            <%= wish.owner %>
+            <br> 
+			<br>
+			<span class="indexItemName">
+				<%= wish.name %> for
+				<%= wish.owner %>
+				<br>
+			</span>
 			<br>
 			<% if(wish.inCart == false && wish.isPurchased == false) { %>
 				<form style=" visibility: visible;"
@@ -44,6 +50,8 @@
 			<% }); %>
 		</ul>
         <ul class="cart" style="list-style-type: none;"></ul>
-		<%- include('../partials/footer.ejs') %>
 	</body>
+		<footer class="indexFooter">
+			<%- include('../partials/footer.ejs') %>
+		</footer>
 </html>

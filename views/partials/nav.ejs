@@ -10,19 +10,19 @@
   crossorigin="anonymous"
 ></script>
 <script defer src="/app/script.js"></script>
-    <link rel="icon" type="icon" sizes="32x32" href="/assets/Red_Bow_Crop.ico">
+    <!-- <link rel="icon" type="icon" sizes="32x32" href="/assets/Red_Bow_Crop.ico"> -->
     <link rel="stylesheet" type="text/css" href="/css/styles.css" />
     <title>WishListings</title>
 </head>
 <body>
     <header>
-        <h1>
+        <h1 class="accountNav">
             <a href="/wishlist">Wishlistings</a>
         </h1>
-        <nav>
+        <nav class="accountNav">
             <ul style="list-style: none;">
                 <% if(user) { %>
-                    <li>
+                    <li style="font-size: 18px; text-decoration: underline;">
                         Welcome, <%= user %>!
                     </li>
                     <li>
