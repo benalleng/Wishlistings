@@ -1,13 +1,13 @@
 # Wishlistings
 
+Welcome to Wishlistings README
 
+Created using Express and MongoDB this website is part public wishlist and part store. Intended for users to track what items are on their wishlist and what items they can purchase for other users.
 ____________ 
 
 ## Technologies Used
 
-- Javascript, JQuery
-
-- HTML, CSS
+- Javascript, Express, Mongoose, HTML, CSS
 
 ## Screenshots
 
@@ -24,7 +24,7 @@ ____________
 
  - Take a look around the index page after entering the website from the welcome screen. Then signup or login to add, edit, update, and delete items from the wishlist!
 
- - [Netlify](https://im-feeling-hungry.netlify.app/)
+ - [Heroku](https://wishlistings-ga.herokuapp.com/)
 
 ## Future Enhancements
 
