@@ -33,6 +33,20 @@ main.newItem {
   margin-top: -100px;
 }
 
+main.welcome {
+  display: flex;
+  flex-direction: column;
+  margin-top: 7%;
+}
+div.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 10px;
+  margin-top: 25px;
+}
+
 footer.login {
 margin-top: 10vmax;
 padding: 2vmax;
@@ -111,8 +125,8 @@ background-color: #f1f1f1;
 
 .Bow {
   display: flex;
-  width: 1000px;
-  height: 600px;
+  width: 80vmax;
+  height: 60vmax;
   align-self: center;
 }
 
@@ -125,8 +139,8 @@ background-color: #f1f1f1;
 }
 
 @keyframes grow {
-  from {width: 1000px;}
-  to {width: 1020px;}
+  from {width: 80vmax;}
+  to {width: 82vmax;}
 }
 
 .indexWishItem {
@@ -221,10 +235,31 @@ text-decoration: underline;
 .indexWishList {
   margin-top: -150px;
 }
+
+main.welcome {
+  margin-top: 20%;
+}
 }
 
 @media only screen and (max-width: 713px) {
 .indexWishList {
   margin-top: -300px;
 }
+.Bow {
+  height:30vmax;
+  width:40vmax;
+}
+.Bow:hover {
+  font-size: 12;
+  animation-name: grow_2;
+  animation-duration: 300ms;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+@keyframes grow_2 {
+  from {width: 40vmax;}
+  to {width: 42vmax;}
+}
+
 }
