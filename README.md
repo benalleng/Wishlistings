@@ -12,13 +12,13 @@ ____________
 ## Screenshots
 
 ### Initial Page
-![Initial](.public/assets/Welcome_Screen.png)
+![Initial](public/assets/Welcome_Screen.png)
 
 ### Auth Page
-![Form](.public/assets/Signup.png)
+![Form](public/assets/Signup.png)
 
 ### Index Page
-![Final](.public/assets/Index_Page.png)
+![Final](public/assets/Index_Page.png)
 
 ## Geting started
 
