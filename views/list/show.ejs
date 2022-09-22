@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -5,20 +6,29 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-		<title><%= wish.name %></title>
+		<title>WishListings - <%= wish.name %></title>
 	</head>
 	<body>
 		<%- include('../partials/nav.ejs') %>
         <h2 class="title"><%= wish.name %></h2>
 		<main class="newItem">
 
+			<label> <img src="<%= wish.img %>" alt="<%= wish.name %>" width="300" height="300">
+			</label>
+			<br>
 				<label> Owner: <%= wish.owner %>
 				</label> 
 				<br>
-				<label> <img src="<%= wish.img %>" alt="<%= wish.name %>" width="300" height="300">
+				<label> Description: <%= wish.description %>
 				</label>
 				<br>
-				<label> Purchased: <%= wish.isPurchased %>
+				<% if(wish.isPurchased == false) { %>
+					Purchased: <span style="color: green">Available</span>
+				<% } else { %>
+					Puschased: <span style="color: red">Unavailable</span>
+				<% } %>
+				<br>
+				<label> Price : <%= wish.price %>
 				</label>
 				<br>
 					<nav>

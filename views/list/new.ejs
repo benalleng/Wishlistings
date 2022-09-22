@@ -21,7 +21,12 @@
                 </label><br>
                 <label> Price: <br> <input type="number" name="price">
                 </label><br>
-                <label> Owner: <br> <input type="text" name="owner" value="<%= user %>">
+                <label><% if(user == 'admin67890') { %>
+                    Owner:
+                <% } %> <input <% if(user !== 'admin67890') { %>
+                    hidden
+                <% } %>
+                 type="text" name="owner" value="<%= user %>">
                 </label> <br>
                 <input class="submit" type="submit" value="Add Wish">
             </form><br>
